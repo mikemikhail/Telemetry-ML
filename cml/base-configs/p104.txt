@@ -1,0 +1,350 @@
+Building configuration...
+
+Current configuration : 8954 bytes
+!
+! Last configuration change at 13:14:18 UTC Wed Apr 13 2022
+!
+version 17.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname p104
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+!
+no logging console
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+!
+mpls traffic-eng tunnels
+multilink bundle-name authenticated
+!
+domain virl.info
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+crypto pki trustpoint TP-self-signed-2565266363
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2565266363
+ revocation-check none
+ rsakeypair TP-self-signed-2565266363
+!
+!
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+        quit
+crypto pki certificate chain TP-self-signed-2565266363
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32353635 32363633 3633301E 170D3232 30333236 31373534 
+  31365A17 0D333230 33323531 37353431 365A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 35363532 
+  36363336 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100B7AD 5364B042 B3D37EA1 C9611275 6C121336 066E961E 2E911501 
+  3A71DE3C 91CBAF85 94A219A7 7D395139 CCFBE453 6B93C93C AB6891F1 89560235 
+  DE3D1EA2 F2873139 007FD575 81EEC891 E9E5E188 9AE2E7A5 5A6C7D4D 3DD062A8 
+  B35EA150 23F60632 DD8F29F9 6C246781 635F822E EF2E008B EF229232 4BC92678 
+  62F69B71 54E83EC1 76D0155C 790CAB19 41CA7F2C 0E434DDE 40CE9E08 24189069 
+  3706C512 96776F1C 2342E661 F4069F5F 47377B4C 7A0CFCD8 BBCB1A66 BC5267A9 
+  54C4DBA5 7B87C6C5 6D71E433 A0538E26 2A8CD062 5FFBF603 8A985B3D 26F203CD 
+  D1968A4A 831B3CD4 5EB74652 085324E4 9553DF07 78F3C65F D52ADAF4 61D1A772 
+  9662CC7D B5530203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14090F45 310C520A E99C369A 9C4715F1 0822A526 
+  97301D06 03551D0E 04160414 090F4531 0C520AE9 9C369A9C 4715F108 22A52697 
+  300D0609 2A864886 F70D0101 05050003 82010100 7B46965C 40B50F44 1DF0C0A4 
+  13DB28F5 30DD04B0 0CFB785C D7E1B748 41C2BB67 133D3E5E 1317B9E9 6966BBCC 
+  4C24525A 641840B5 CF5E9D50 29CAA73D 2742D3DC 28A32EE3 B8DA6350 051C6A20 
+  77DFFEE1 3C079935 3CF5AB9C 52E1FB79 84E01E1E 90D5F578 9CCCA970 644BD981 
+  D3B8C776 F96E1C03 D4159DF8 B6618274 81151790 9DF5FBC5 6B16CDCD 2221A3E5 
+  103F563B 5A23B31B 9DE50330 48BEF517 1CD8A468 F23EF5E3 81833829 D9A61A89 
+  DF5B68BE D424D248 2CE47F46 C923A69E 695C4FFB CAADB59B 3D6258CC DA74ABD7 
+  8AFF61D6 820D7D51 B13673D4 79693790 FD2E73F8 F47581FC 7B9A0813 B22FB392 
+  C9AE70D2 4C8BDEDF 36C758C5 CB6FF75B 7D3B90AD
+        quit
+!
+license udi pid CSR1000V sn 906XFLPKXIB
+diagnostic bootup level minimal
+memory free low-watermark processor 71489
+!
+!
+spanning-tree extend system-id
+!
+username cisco privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+cdp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description Loopback
+ ip address 192.168.0.104 255.255.255.255
+ isis circuit-type level-2-only
+!
+interface GigabitEthernet1
+ description to d114
+ ip address 10.0.0.57 255.255.255.252
+ ip router isis ISIS
+ negotiation auto
+ cdp enable
+ mpls ip
+ mpls traffic-eng tunnels
+ bfd interval 250 min_rx 250 multiplier 3
+ no mop enabled
+ no mop sysid
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100 level-1
+ isis metric 100 level-2
+ no isis hello padding
+ isis csnp-interval 10 level-1
+ isis csnp-interval 10 level-2
+ ip rsvp bandwidth
+!
+interface GigabitEthernet2
+ description to p101
+ ip address 10.0.0.10 255.255.255.252
+ ip router isis ISIS
+ negotiation auto
+ cdp enable
+ mpls ip
+ mpls traffic-eng tunnels
+ bfd interval 250 min_rx 250 multiplier 3
+ no mop enabled
+ no mop sysid
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100 level-1
+ isis metric 100 level-2
+ no isis hello padding
+ isis csnp-interval 10 level-1
+ isis csnp-interval 10 level-2
+ ip rsvp bandwidth
+!
+interface GigabitEthernet3
+ description to p103 
+ ip address 10.0.0.42 255.255.255.252
+ ip router isis ISIS
+ negotiation auto
+ cdp enable
+ mpls ip
+ mpls traffic-eng tunnels
+ bfd interval 250 min_rx 250 multiplier 3
+ no mop enabled
+ no mop sysid
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100 level-1
+ isis metric 100 level-2
+ no isis hello padding
+ isis csnp-interval 10 level-1
+ isis csnp-interval 10 level-2
+ ip rsvp bandwidth
+!
+interface GigabitEthernet4
+ description to s124
+ ip address 10.0.0.61 255.255.255.252
+ ip router isis ISIS
+ negotiation auto
+ cdp enable
+ mpls ip
+ mpls traffic-eng tunnels
+ bfd interval 250 min_rx 250 multiplier 3
+ no mop enabled
+ no mop sysid
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100 level-1
+ isis metric 100 level-2
+ no isis hello padding
+ isis csnp-interval 10 level-1
+ isis csnp-interval 10 level-2
+ ip rsvp bandwidth
+!
+interface GigabitEthernet5
+ description to s134
+ ip address 10.0.0.65 255.255.255.252
+ ip router isis ISIS
+ negotiation auto
+ cdp enable
+ mpls ip
+ mpls traffic-eng tunnels
+ bfd interval 250 min_rx 250 multiplier 3
+ no mop enabled
+ no mop sysid
+ isis circuit-type level-2-only
+ isis network point-to-point 
+ isis metric 100 level-1
+ isis metric 100 level-2
+ no isis hello padding
+ isis csnp-interval 10 level-1
+ isis csnp-interval 10 level-2
+ ip rsvp bandwidth
+!
+interface GigabitEthernet6
+ description OOB Management
+ vrf forwarding Mgmt-intf
+ ip address 198.18.1.104 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+router isis ISIS
+ net 49.0001.1921.6800.0104.00
+ is-type level-2-only
+ advertise passive-only
+ metric-style wide
+ passive-interface Loopback0
+ bfd all-interfaces
+ mpls traffic-eng router-id Loopback0
+ mpls traffic-eng level-2
+!
+ip forward-protocol nd
+no ip http server
+ip http secure-server
+!
+ip route vrf Mgmt-intf 10.16.0.0 255.255.0.0 198.18.1.1
+ip route vrf Mgmt-intf 10.64.0.0 255.255.0.0 198.18.1.1
+ip route vrf Mgmt-intf 198.18.128.0 255.255.192.0 198.18.1.1
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+alias exec up show ip interface brief | include up
+alias exec tun show mpls traffic-eng tunnels brief
+alias exec topo show isis topology
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0 4
+ exec-timeout 12 0
+ login local
+ transport input ssh
+line vty 5 15
+ exec-timeout 720 0
+ login
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+end

@@ -1,0 +1,15 @@
+
+no netconf-yang
+
+no telemetry ietf subscription 10
+ 
+no telemetry ietf subscription 502
+ 
+no telemetry ietf subscription 503
+
+no telemetry ietf subscription 504
+ 
+no telemetry ietf subscription 3313
+ 
+no telemetry ietf subscription 3315
+ 
